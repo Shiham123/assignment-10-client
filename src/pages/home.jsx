@@ -3,7 +3,7 @@ import Brand from '../components/brand';
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="overflow-hidden">
       <Banner />
       <Brand />
     </div>
