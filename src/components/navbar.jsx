@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Navbar,
   MobileNav,
   Typography,
   Button,
   IconButton,
 } from '@material-tailwind/react';
+import { Link, NavLink } from 'react-router-dom';
 
 const NavbarItem = () => {
   const [openNav, setOpenNav] = React.useState(false);
@@ -18,16 +18,25 @@ const NavbarItem = () => {
   }, []);
 
   const navList = (
-    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
       <Typography
         as="li"
         variant="small"
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Pages
-        </a>
+        <NavLink
+          to="/"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? 'pending'
+              : isActive
+              ? 'text-white opacity-80 font-poppins font-semibold'
+              : 'font-semibold text-gray-900'
+          }
+        >
+          Home
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -35,9 +44,18 @@ const NavbarItem = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Account
-        </a>
+        <NavLink
+          to="/addProduct"
+          className={({ isActive, isPending }) =>
+            isPending
+              ? 'pending'
+              : isActive
+              ? 'text-white opacity-80 font-poppins font-semibold'
+              : 'font-semibold text-gray-900'
+          }
+        >
+          Add Product
+        </NavLink>
       </Typography>
       <Typography
         as="li"
@@ -45,36 +63,50 @@ const NavbarItem = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
-          Blocks
-        </a>
-      </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-normal"
-      >
-        <a href="#" className="flex items-center">
-          Docs
-        </a>
+        <NavLink
+          to="/myCart"
+          className={({ isPending, isActive }) =>
+            isPending
+              ? 'pending'
+              : isActive
+              ? 'text-white opacity-80 font-poppins font-semibold'
+              : 'font-semibold text-gray-900'
+          }
+        >
+          My Cart
+        </NavLink>
       </Typography>
     </ul>
   );
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl py-2 px-4 lg:px-8 lg:py-4">
+    <div className="mx-auto py-2 px-4 lg:px-8 lg:py-4 bg-[#53ba00]">
       <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
         <Typography
           as="a"
           href="#"
           className="mr-4 cursor-pointer py-1.5 font-medium"
         >
-          Material Tailwind
+          <div className="flex justify-center items-center gap-4">
+            <img
+              className="rounded-full hover:scale-110 duration-200"
+              src="https://raw.githubusercontent.com/Shiham123/img-for-creative/master/_a946399b-7853-4fb7-a3bf-42a013df7654.png"
+              width="70px"
+              alt=""
+            />
+            <h1 className="font-bold font-poppins tracking-widest text-gray-800">
+              Technology <br /> for everyone
+            </h1>
+          </div>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
-        <Button variant="gradient" size="sm" className="hidden lg:inline-block">
-          <span>Buy Now</span>
+        <Button
+          size="sm"
+          className="hidden lg:inline-block bg-[#9bff2e] text-black font-poppins"
+        >
+          <Link to="/login">
+            <span>Log In</span>
+          </Link>
         </Button>
         <IconButton
           variant="text"
@@ -117,12 +149,17 @@ const NavbarItem = () => {
       <MobileNav open={openNav}>
         <div className="container mx-auto">
           {navList}
-          <Button variant="gradient" size="sm" fullWidth className="mb-2">
-            <span>Buy Now</span>
+          <Button
+            size="sm"
+            className="mb-2  bg-[#9bff2e] text-black font-poppins"
+          >
+            <Link to="/login">
+              <span>Log In</span>
+            </Link>
           </Button>
         </div>
       </MobileNav>
-    </Navbar>
+    </div>
   );
 };
 
