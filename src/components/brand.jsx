@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Brand = () => {
   const [brandData, setBrandData] = useState([]);
@@ -21,19 +22,20 @@ const Brand = () => {
         {/* item */}
 
         {brandData &&
-          brandData.map((item, index) => {
-            const { name, image } = item;
+          brandData.map((item) => {
+            const { id, name, image } = item;
             return (
-              <div
-                className="card lg:w-96 md:w-80 w-96 image-full hover:scale-110 hover:duration-500"
-                key={index}
-              >
-                <figure>
-                  <img className="object-cover" src={image} alt="Shoes" />
-                </figure>
-                <div className="card-body">
-                  <h2 className="card-title text-center">{name}</h2>
-                </div>
+              <div key={id}>
+                <Link to={`/brand/${id}`}>
+                  <div className="card lg:w-96 md:w-80 w-96 image-full hover:scale-110 hover:duration-500">
+                    <figure>
+                      <img className="object-cover" src={image} alt="Shoes" />
+                    </figure>
+                    <div className="card-body">
+                      <h2 className="card-title text-center">{name}</h2>
+                    </div>
+                  </div>
+                </Link>
               </div>
             );
           })}
