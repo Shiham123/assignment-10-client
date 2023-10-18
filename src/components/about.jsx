@@ -1,6 +1,6 @@
 const AboutPage = () => {
   return (
-    <div className="flex justify-center items-center flex-col flex-wrap mx-20 border-4 border-[#53ba00b3] hover:border-8 duration-500">
+    <div className="flex justify-center items-center flex-col flex-wrap mx-20 my-[20rem] border-4 border-[#53ba00b3] hover:border-8 duration-500">
       <h1 className="font-poppins text-4xl md:text-6xl lg:text-7xl font-bold text-black hover:text-[#53ba00b3] duration-500 hover:scale-110 my-20 hover:uppercase">
         About us
       </h1>

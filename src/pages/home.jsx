@@ -1,6 +1,7 @@
 import AboutPage from '../components/about';
 import Banner from '../components/banner';
 import Brand from '../components/brand';
+import Faq from '../components/faq';
 
 const HomePage = () => {
   return (
@@ -8,6 +9,7 @@ const HomePage = () => {
       <Banner />
       <Brand />
       <AboutPage />
+      <Faq />
     </div>
   );
 };
