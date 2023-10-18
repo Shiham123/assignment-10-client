@@ -52,7 +52,7 @@ const BrandItems = () => {
 
       <div className="flex justify-center items-center flex-col md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 md:px-[1rem] lg:px-[10rem] px-0">
         {/* item */}
-        <div className="card w-80 bg-base-100 shadow-xl">
+        <div className="card w-80 bg-[#53ba00] shadow-xl my-8">
           <figure>
             <img
               src="https://raw.githubusercontent.com/Shiham123/img-for-creative/master/Microsoft/aaron-jones-wWFUqIzphTI-unsplash.jpg"
@@ -61,100 +61,66 @@ const BrandItems = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">
-              Shoes!
-              <div className="badge badge-secondary">Microsoft</div>
-            </h2>
-            <p>Technology and Electronics</p>
-            <p>$ 200 dollar</p>
-            <div>
-              <div className="rating">
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                  checked
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
+              <span className="font-poppins font-bold">Computer</span>
+              <div className="badge font-poppins capitalize font-semibold text-xl p-4 text-[#53ba00] hover:text-black duration-500">
+                Microsoft
               </div>
-            </div>
-            <div className="card-actions justify-end">
-              <div className="badge badge-outline">show Details</div>
-              <div className="badge badge-outline">Update Product</div>
+            </h2>
+            <p className="font-poppins font-semibold tracking-wider">
+              Type : Technology and Electronics
+            </p>
+            <p className="font-poppins font-semibold tracking-wider">
+              $ 200 dollar
+            </p>
+            <p className="font-poppins font-semibold tracking-wider">
+              Rating : 5/10
+            </p>
+            <div className="card-actions justify-start">
+              <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize my-4">
+                show Details
+              </button>
+              <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize">
+                Update Product
+              </button>
             </div>
           </div>
         </div>
         {/* item */}
-        <div className="card w-80 bg-base-100 shadow-xl">
+        <div className="card w-80 bg-[#53ba00] shadow-xl my-8">
           <figure>
             <img
-              src="https://raw.githubusercontent.com/Shiham123/img-for-creative/master/Microsoft/aaron-jones-wWFUqIzphTI-unsplash.jpg"
+              src="https://raw.githubusercontent.com/Shiham123/img-for-creative/master/Microsoft/billy-freeman-DPOdCl4bGJU-unsplash.jpg"
               alt="Shoes"
             />
           </figure>
           <div className="card-body">
             <h2 className="card-title">
-              Shoes!
-              <div className="badge badge-secondary">Microsoft</div>
-            </h2>
-            <p>Technology and Electronics</p>
-            <p>$ 200 dollar</p>
-            <div>
-              <div className="rating">
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                  checked
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
+              <span className="font-poppins font-bold">Computer</span>
+              <div className="badge font-poppins capitalize font-semibold text-xl p-4 text-[#53ba00] hover:text-black duration-500">
+                Microsoft
               </div>
-            </div>
-            <div className="card-actions justify-end">
-              <div className="badge badge-outline">show Details</div>
-              <div className="badge badge-outline">Update Product</div>
+            </h2>
+            <p className="font-poppins font-semibold tracking-wider">
+              Type : Technology and Electronics
+            </p>
+            <p className="font-poppins font-semibold tracking-wider">
+              $ 200 dollar
+            </p>
+            <p className="font-poppins font-semibold tracking-wider">
+              Rating : 5/10
+            </p>
+            <div className="card-actions justify-start">
+              <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize my-4">
+                show Details
+              </button>
+              <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize">
+                Update Product
+              </button>
             </div>
           </div>
         </div>
         {/* item */}
-        <div className="card w-80 bg-base-100 shadow-xl">
+        <div className="card w-80 bg-[#53ba00] shadow-xl my-8">
           <figure>
             <img
               src="https://raw.githubusercontent.com/Shiham123/img-for-creative/master/Microsoft/aaron-jones-wWFUqIzphTI-unsplash.jpg"
@@ -163,49 +129,32 @@ const BrandItems = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">
-              Shoes!
-              <div className="badge badge-secondary">Microsoft</div>
-            </h2>
-            <p>Technology and Electronics</p>
-            <p>$ 200 dollar</p>
-            <div>
-              <div className="rating">
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                  checked
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
+              <span className="font-poppins font-bold">Computer</span>
+              <div className="badge font-poppins capitalize font-semibold text-xl p-4 text-[#53ba00] hover:text-black duration-500">
+                Microsoft
               </div>
-            </div>
-            <div className="card-actions justify-end">
-              <div className="badge badge-outline">show Details</div>
-              <div className="badge badge-outline">Update Product</div>
+            </h2>
+            <p className="font-poppins font-semibold tracking-wider">
+              Type : Technology and Electronics
+            </p>
+            <p className="font-poppins font-semibold tracking-wider">
+              $ 200 dollar
+            </p>
+            <p className="font-poppins font-semibold tracking-wider">
+              Rating : 5/10
+            </p>
+            <div className="card-actions justify-start">
+              <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize my-4">
+                show Details
+              </button>
+              <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize">
+                Update Product
+              </button>
             </div>
           </div>
         </div>
         {/* item */}
-        <div className="card w-80 bg-base-100 shadow-xl">
+        <div className="card w-80 bg-[#53ba00] shadow-xl my-8">
           <figure>
             <img
               src="https://raw.githubusercontent.com/Shiham123/img-for-creative/master/Microsoft/aaron-jones-wWFUqIzphTI-unsplash.jpg"
@@ -214,44 +163,27 @@ const BrandItems = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">
-              Shoes!
-              <div className="badge badge-secondary">Microsoft</div>
-            </h2>
-            <p>Technology and Electronics</p>
-            <p>$ 200 dollar</p>
-            <div>
-              <div className="rating">
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                  checked
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
-                <input
-                  type="radio"
-                  name="rating-2"
-                  className="mask mask-star-2 bg-orange-400"
-                />
+              <span className="font-poppins font-bold">Computer</span>
+              <div className="badge font-poppins capitalize font-semibold text-xl p-4 text-[#53ba00] hover:text-black duration-500">
+                Microsoft
               </div>
-            </div>
-            <div className="card-actions justify-end">
-              <div className="badge badge-outline">show Details</div>
-              <div className="badge badge-outline">Update Product</div>
+            </h2>
+            <p className="font-poppins font-semibold tracking-wider">
+              Type : Technology and Electronics
+            </p>
+            <p className="font-poppins font-semibold tracking-wider">
+              $ 200 dollar
+            </p>
+            <p className="font-poppins font-semibold tracking-wider">
+              Rating : 5/10
+            </p>
+            <div className="card-actions justify-start">
+              <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize my-4">
+                show Details
+              </button>
+              <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize">
+                Update Product
+              </button>
             </div>
           </div>
         </div>
