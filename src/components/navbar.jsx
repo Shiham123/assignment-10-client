@@ -4,7 +4,6 @@ import {
   Typography,
   Button,
   IconButton,
-  Avatar,
 } from '@material-tailwind/react';
 import { Link, NavLink } from 'react-router-dom';
 import { AppContext } from '../context/context';
