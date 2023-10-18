@@ -8,6 +8,7 @@ import LoginPage from '../pages/login';
 import BrandItems from '../pages/brandItems';
 import RegisterPage from '../pages/register';
 import ItemDetails from '../pages/itemDetails';
+import PrivateRoute from './privateRoute';
 
 const routes = createBrowserRouter([
   {
@@ -16,12 +17,33 @@ const routes = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       { path: '/', element: <HomePage /> },
-      { path: '/addProduct', element: <AddProduct /> },
-      { path: '/myCart', element: <MyCart /> },
+      {
+        path: '/addProduct',
+        element: (
+          <PrivateRoute>
+            <AddProduct />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/myCart',
+        element: (
+          <PrivateRoute>
+            <MyCart />
+          </PrivateRoute>
+        ),
+      },
       { path: '/login', element: <LoginPage /> },
       { path: '/brand/:id', element: <BrandItems /> },
       { path: '/register', element: <RegisterPage /> },
-      { path: '/itemDetails', element: <ItemDetails /> },
+      {
+        path: '/itemDetails',
+        element: (
+          <PrivateRoute>
+            <ItemDetails />
+          </PrivateRoute>
+        ),
+      },
     ],
   },
 ]);

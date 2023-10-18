@@ -1,11 +1,14 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/context';
 
 import { FcGoogle } from 'react-icons/fc';
 
 const LoginPage = () => {
   const context = useContext(AppContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+
   const { loginEmailPassword, loginGoogle } = context;
 
   const handleSubmit = (event) => {
@@ -15,13 +18,19 @@ const LoginPage = () => {
     const password = formData.get('password');
 
     loginEmailPassword(email, password)
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        navigate(location?.state ? location.state : '/');
+      })
       .catch((error) => console.log(error));
   };
 
   const handleGoogle = () => {
     loginGoogle()
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        navigate(location?.state ? location.state : '/');
+      })
       .catch((error) => console.log(error));
   };
   return (
