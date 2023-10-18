@@ -1,6 +1,39 @@
 const AddProduct = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const url = formData.get('url');
+    const brand = formData.get('brand');
+    const type = formData.get('type');
+    const price = formData.get('price');
+    const details = formData.get('details');
+    const rating = formData.get('rating');
+    const userAddData = {
+      name,
+      url,
+      brand,
+      type,
+      price,
+      details,
+      rating,
+    };
+
+    fetch('http://localhost:3000/items', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+
+      body: JSON.stringify(userAddData),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="border-4 bg-[#53ba00] flex justify-center items-center flex-col py-12">
         <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="name">Name : </label>
@@ -26,13 +59,15 @@ const AddProduct = () => {
           <label htmlFor="dropdown">Brand Name :</label>
           <select
             id="dropdown"
+            name="brand"
             className="text-xl font-normal px-12 rounded-lg border-none outline-none"
           >
-            <option value="apple">Apple</option>
-            <option value="banana">Banana</option>
-            <option value="cherry">Cherry</option>
-            <option value="date">Date</option>
-            <option value="grape">Grape</option>
+            <option value="Microsoft">Microsoft</option>
+            <option value="Google">Google</option>
+            <option value="Sony">Sony</option>
+            <option value="Apple">Apple</option>
+            <option value="LG">LG</option>
+            <option value="Samsung">Samsung</option>
           </select>
         </div>
 
