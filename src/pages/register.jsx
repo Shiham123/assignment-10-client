@@ -1,23 +1,13 @@
-import { Link } from 'react-router-dom';
-
-const LoginPage = () => {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.target);
-    const email = formData.get('email');
-    const password = formData.get('password');
-    const loginData = { email, password };
-    console.log(loginData);
-  };
+const RegisterPage = () => {
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col">
           <h1 className="font-poppins text-5xl font-bold tracking-widest leading-10 my-10 hover:scale-110 duration-300 hover:opacity-80 uppercase">
-            Login page
+            Register page
           </h1>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body" onSubmit={handleSubmit}>
+            <form className="card-body">
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -51,15 +41,6 @@ const LoginPage = () => {
                 </button>
               </div>
             </form>
-            {/* Register toggle */}
-            <div className="px-5 font-poppins tracking-wider">
-              Don&apos;t have a account{' '}
-              <Link to="/register">
-                <span className="font-semibold hover:text-[#9bff2e] duration-500">
-                  Register
-                </span>
-              </Link>{' '}
-            </div>
           </div>
         </div>
       </div>
@@ -67,4 +48,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
