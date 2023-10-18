@@ -4,7 +4,7 @@ import { AppContext } from '../context/context';
 
 const RegisterPage = () => {
   const context = useContext(AppContext);
-  const { createUserEmailPassword } = context;
+  const { createUserEmailPassword, showProfile } = context;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,7 +15,12 @@ const RegisterPage = () => {
     const password = formData.get('password');
 
     createUserEmailPassword(email, password)
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        showProfile(userName, photoUrl)
+          .then((result) => console.log(result))
+          .catch((error) => console.log(error));
+      })
       .catch((error) => console.log(error));
   };
   return (

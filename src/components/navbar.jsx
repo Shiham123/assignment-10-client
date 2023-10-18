@@ -4,6 +4,7 @@ import {
   Typography,
   Button,
   IconButton,
+  Avatar,
 } from '@material-tailwind/react';
 import { Link, NavLink } from 'react-router-dom';
 import { AppContext } from '../context/context';
@@ -20,6 +21,9 @@ const NavbarItem = () => {
 
   const context = useContext(AppContext);
   const { user, logout } = context;
+
+  const displayName = user?.displayName;
+  const photo = user?.photoURL;
 
   const handleLogout = () => {
     logout()
@@ -112,13 +116,31 @@ const NavbarItem = () => {
         <div className="hidden lg:block">{navList}</div>
 
         {/* toggle login logout */}
+
         {user ? (
-          <Button
-            size="sm"
-            className="hidden lg:inline-block bg-[#9bff2e] text-black font-poppins"
-          >
-            <span onClick={handleLogout}>Log Out</span>
-          </Button>
+          <div className="flex justify-center items-center gap-8">
+            <div>
+              {user && (
+                <div className="flex justify-center items-center">
+                  <h1 className="font-poppins font-bold tracking-wider">
+                    {displayName}
+                  </h1>
+                  <img
+                    src={photo}
+                    alt=""
+                    width="30px"
+                    className="rounded-full border-white"
+                  />
+                </div>
+              )}
+            </div>
+            <Button
+              size="sm"
+              className="hidden lg:inline-block bg-[#9bff2e] text-black font-poppins"
+            >
+              <span onClick={handleLogout}>Log Out</span>
+            </Button>
+          </div>
         ) : (
           <Button
             size="sm"

@@ -6,6 +6,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from 'firebase/auth';
 
 import globalAuth from '../Firebase/firebase.config.js';
@@ -29,6 +30,13 @@ const AppProvider = ({ children }) => {
     return signInWithPopup(globalAuth, googleProvider);
   };
 
+  const showProfile = (displayName, photoUrl) => {
+    return updateProfile(globalAuth.currentUser, {
+      displayName,
+      photoUrl,
+    });
+  };
+
   const logout = () => {
     return signOut(globalAuth);
   };
@@ -49,6 +57,7 @@ const AppProvider = ({ children }) => {
     logout,
     user,
     loginGoogle,
+    showProfile,
   };
 
   return <AppContext.Provider value={info}>{children}</AppContext.Provider>;
