@@ -9,6 +9,7 @@ import BrandItems from '../pages/brandItems';
 import RegisterPage from '../pages/register';
 import ItemDetails from '../pages/itemDetails';
 import PrivateRoute from './privateRoute';
+import UpdateItem from '../pages/updateItems';
 
 const routes = createBrowserRouter([
   {
@@ -41,6 +42,14 @@ const routes = createBrowserRouter([
         element: (
           <PrivateRoute>
             <ItemDetails />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: '/updateItem',
+        element: (
+          <PrivateRoute>
+            <UpdateItem />
           </PrivateRoute>
         ),
       },

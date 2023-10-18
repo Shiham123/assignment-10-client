@@ -82,9 +82,11 @@ const BrandItems = () => {
                   show Details
                 </button>
               </Link>
-              <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize">
-                Update Product
-              </button>
+              <Link to="/updateItem">
+                <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize">
+                  Update Product
+                </button>
+              </Link>
             </div>
           </div>
         </div>

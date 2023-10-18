@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/context';
 
 import { FcGoogle } from 'react-icons/fc';
