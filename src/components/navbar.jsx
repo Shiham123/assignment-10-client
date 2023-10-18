@@ -170,14 +170,23 @@ const NavbarItem = () => {
       <MobileNav open={openNav}>
         <div className="container mx-auto">
           {navList}
-          <Button
-            size="sm"
-            className="mb-2  bg-[#9bff2e] text-black font-poppins"
-          >
-            <Link to="/login">
-              <span>Log In</span>
-            </Link>
-          </Button>
+          {user ? (
+            <Button
+              size="sm"
+              className="mb-2  bg-[#9bff2e] text-black font-poppins"
+            >
+              <span onClick={handleLogout}>Log Out</span>
+            </Button>
+          ) : (
+            <Button
+              size="sm"
+              className="mb-2  bg-[#9bff2e] text-black font-poppins"
+            >
+              <Link to="/login">
+                <span>Log In</span>
+              </Link>
+            </Button>
+          )}
         </div>
       </MobileNav>
     </div>

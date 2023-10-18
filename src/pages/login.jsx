@@ -2,9 +2,11 @@ import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AppContext } from '../context/context';
 
+import { FcGoogle } from 'react-icons/fc';
+
 const LoginPage = () => {
   const context = useContext(AppContext);
-  const { loginEmailPassword } = context;
+  const { loginEmailPassword, loginGoogle } = context;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -13,6 +15,12 @@ const LoginPage = () => {
     const password = formData.get('password');
 
     loginEmailPassword(email, password)
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
+
+  const handleGoogle = () => {
+    loginGoogle()
       .then((result) => console.log(result))
       .catch((error) => console.log(error));
   };
@@ -58,8 +66,15 @@ const LoginPage = () => {
                 </button>
               </div>
             </form>
+            {/* google login */}
+
+            <div className="flex justify-center items-center bg-[#9bff2e] text-black font-poppins text-2xl gap-4 py-4 rounded-lg hover:bg-black hover:text-[#9bff2e] duration-500 tracking-widest">
+              <FcGoogle />
+              <button onClick={handleGoogle}>Login with google</button>
+            </div>
+
             {/* Register toggle */}
-            <div className="px-5 font-poppins tracking-wider">
+            <div className="px-5 font-poppins tracking-wider my-8">
               Don&apos;t have a account{' '}
               <Link to="/register">
                 <span className="font-semibold hover:text-[#9bff2e] duration-500">
