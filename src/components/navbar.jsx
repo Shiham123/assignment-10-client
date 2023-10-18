@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import {
   MobileNav,
   Typography,
@@ -6,6 +6,7 @@ import {
   IconButton,
 } from '@material-tailwind/react';
 import { Link, NavLink } from 'react-router-dom';
+import { AppContext } from '../context/context';
 
 const NavbarItem = () => {
   const [openNav, setOpenNav] = React.useState(false);
@@ -16,6 +17,15 @@ const NavbarItem = () => {
       () => window.innerWidth >= 960 && setOpenNav(false)
     );
   }, []);
+
+  const context = useContext(AppContext);
+  const { user, logout } = context;
+
+  const handleLogout = () => {
+    logout()
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
 
   const navList = (
     <ul className="mb-4 mt-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 ">
@@ -100,17 +110,28 @@ const NavbarItem = () => {
           </div>
         </Typography>
         <div className="hidden lg:block">{navList}</div>
-        <Button
-          size="sm"
-          className="hidden lg:inline-block bg-[#9bff2e] text-black font-poppins"
-        >
-          <Link to="/login">
-            <span>Log In</span>
-          </Link>
-        </Button>
+
+        {/* toggle login logout */}
+        {user ? (
+          <Button
+            size="sm"
+            className="hidden lg:inline-block bg-[#9bff2e] text-black font-poppins"
+          >
+            <span onClick={handleLogout}>Log Out</span>
+          </Button>
+        ) : (
+          <Button
+            size="sm"
+            className="hidden lg:inline-block bg-[#9bff2e] text-black font-poppins"
+          >
+            <Link to="/login">
+              <span>Log In</span>
+            </Link>
+          </Button>
+        )}
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className="ml-auto h-6 w-6 text-inherit hover:bg -transparent focus:bg-transparent active:bg-transparent lg:hidden"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >

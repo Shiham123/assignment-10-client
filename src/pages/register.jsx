@@ -1,6 +1,23 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../context/context';
 
 const RegisterPage = () => {
+  const context = useContext(AppContext);
+  const { createUserEmailPassword } = context;
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const userName = formData.get('username');
+    const email = formData.get('email');
+    const photoUrl = formData.get('url');
+    const password = formData.get('password');
+
+    createUserEmailPassword(email, password)
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
+  };
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -9,7 +26,7 @@ const RegisterPage = () => {
             Register page
           </h1>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <form className="card-body">
+            <form className="card-body" onSubmit={handleSubmit}>
               {/* user name */}
               <div className="form-control">
                 <label className="label">

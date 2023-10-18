@@ -1,13 +1,20 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AppContext } from '../context/context';
 
 const LoginPage = () => {
+  const context = useContext(AppContext);
+  const { loginEmailPassword } = context;
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const email = formData.get('email');
     const password = formData.get('password');
-    const loginData = { email, password };
-    console.log(loginData);
+
+    loginEmailPassword(email, password)
+      .then((result) => console.log(result))
+      .catch((error) => console.log(error));
   };
   return (
     <div>
