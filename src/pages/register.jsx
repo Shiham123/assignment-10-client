@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const RegisterPage = () => {
   return (
     <div>
@@ -8,26 +10,57 @@ const RegisterPage = () => {
           </h1>
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form className="card-body">
+              {/* user name */}
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Email</span>
+                  <span className="label-text font-poppins">User Name :</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="UserName"
+                  className="input input-bordered font-poppins"
+                  name="username"
+                  required
+                />
+              </div>
+
+              {/* email */}
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text font-poppins">Email</span>
                 </label>
                 <input
                   type="email"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="input input-bordered font-poppins"
                   name="email"
                   required
                 />
               </div>
+
+              {/* photoUrl */}
+              <div className="form-control">
+                <label className="label font-poppins">
+                  <span className="label-text">Photo Url</span>
+                </label>
+                <input
+                  type="url"
+                  placeholder="Photo Url"
+                  className="input input-bordered font-poppins"
+                  name="url"
+                  required
+                />
+              </div>
+
+              {/* password */}
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Password</span>
+                  <span className="label-text font-poppins">Password</span>
                 </label>
                 <input
                   type="password"
                   placeholder="password"
-                  className="input input-bordered"
+                  className="input input-bordered font-poppins"
                   name="password"
                   required
                 />
@@ -37,10 +70,18 @@ const RegisterPage = () => {
                   className="bg-[#9bff2e] text-black font-poppins text-3xl py-4 rounded-lg hover:bg-black hover:text-[#9bff2e] duration-500 tracking-widest"
                   type="submit"
                 >
-                  Login
+                  Register
                 </button>
               </div>
             </form>
+            <div className="px-5 font-poppins tracking-wider">
+              Already have a account{' '}
+              <Link to="/login">
+                <span className="font-semibold hover:text-[#9bff2e] duration-500">
+                  Login
+                </span>
+              </Link>
+            </div>{' '}
           </div>
         </div>
       </div>
