@@ -23,14 +23,32 @@ const ItemDetails = () => {
   const { name, url, brand, type, price, rating, details } = isDetails;
 
   return (
-    <div>
-      <img src={url} alt="" />
-      <h1>{name}</h1>
-      <h1>{brand}</h1>
-      <h1>{type}</h1>
-      <h1>{details}</h1>
-      <h1>{price}</h1>
-      <h1>{rating}</h1>
+    <div className="flex justify-center items-center flex-col w-9/12 m-auto text-center">
+      <img src={url} alt="" className="rounded-lg my-12" />
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-poppins tracking-widest font-semibold capitalize py-4">
+        {name}
+      </h1>
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-poppins tracking-widest font-semibold capitalize py-4">
+        Brand Name : {brand}
+      </h1>
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-poppins tracking-widest font-semibold capitalize py-4">
+        Type of product : {type}
+      </h1>
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-poppins tracking-widest font-semibold capitalize py-4">
+        Description : <span className="font-normal">{details}</span>
+      </h1>
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-poppins tracking-widest font-semibold py-4">
+        Price : ${price}
+      </h1>
+      <h1 className="text-2xl md:text-3xl lg:text-4xl font-poppins tracking-widest font-semibold py-4">
+        Rating : {rating}
+      </h1>
+      <button
+        className="bg-[#9bff2e] text-black font-poppins text-xl md:text-2xl lg:text-3xl my-8 py-8 px-8 rounded-lg hover:bg-black hover:text-[#9bff2e] duration-500 tracking-widest capitalize font-bold"
+        type="submit"
+      >
+        Add to cart
+      </button>
     </div>
   );
 };
