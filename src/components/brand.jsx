@@ -26,7 +26,7 @@ const Brand = () => {
             const { id, name, image } = item;
             return (
               <div key={id}>
-                <Link to={`/brand/${id}`}>
+                <Link to={`/brand/${name}`}>
                   <div className="card lg:w-96 md:w-80 w-96 image-full hover:scale-110 hover:duration-500">
                     <figure>
                       <img className="object-cover" src={image} alt="Shoes" />

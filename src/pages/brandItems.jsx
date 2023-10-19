@@ -5,9 +5,22 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const BrandItems = () => {
+  const { name } = useParams();
+
+  fetch(`http://localhost:3000/items/${name}`, {
+    method: 'GET',
+    headers: {
+      'content-type': 'application.json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => console.log(data))
+    .catch((error) => console.log(error));
+
+  fetch(``);
   return (
     <div>
       <Swiper

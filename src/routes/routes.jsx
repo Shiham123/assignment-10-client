@@ -35,7 +35,7 @@ const routes = createBrowserRouter([
         ),
       },
       { path: '/login', element: <LoginPage /> },
-      { path: '/brand/:id', element: <BrandItems /> },
+      { path: '/brand/:name', element: <BrandItems /> },
       { path: '/register', element: <RegisterPage /> },
       {
         path: '/itemDetails',

@@ -1,32 +1,32 @@
 [
   {
     "id": 1,
-    "name": "Microsoft",
+    "name": "microsoft",
     "image": "https://raw.githubusercontent.com/Shiham123/img-for-creative/master/LOGO/_1e7568f5-4b7f-44b3-8d44-3ed2863e5b1d.jpeg"
   },
   {
     "id": 2,
-    "name": "Google",
+    "name": "google",
     "image": "https://raw.githubusercontent.com/Shiham123/img-for-creative/master/LOGO/_3691c38f-19fc-4caf-922e-b9f0877c22a8.jpeg"
   },
   {
     "id": 3,
-    "name": "Sony",
+    "name": "sony",
     "image": "https://raw.githubusercontent.com/Shiham123/img-for-creative/master/LOGO/_68c7b6e1-e200-4559-b6b9-877ce5d18c2d.jpeg"
   },
   {
     "id": 4,
-    "name": "Apple",
+    "name": "apple",
     "image": "https://raw.githubusercontent.com/Shiham123/img-for-creative/master/LOGO/_6b4614bc-af6f-41b0-b801-890c6ecc0aae.jpeg"
   },
   {
     "id": 5,
-    "name": "LG",
+    "name": "lg",
     "image": "https://raw.githubusercontent.com/Shiham123/img-for-creative/master/LOGO/_5eb46246-3b7f-4595-a85e-213d2fc7e91d.jpeg"
   },
   {
     "id": 6,
-    "name": "Samsung",
+    "name": "samsung",
     "image": "https://raw.githubusercontent.com/Shiham123/img-for-creative/master/LOGO/_dcc07856-1e8d-4bce-a230-a20055669b34.jpeg"
   }
 ]

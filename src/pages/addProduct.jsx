@@ -62,12 +62,12 @@ const AddProduct = () => {
             name="brand"
             className="text-xl font-normal px-12 rounded-lg border-none outline-none"
           >
-            <option value="Microsoft">Microsoft</option>
-            <option value="Google">Google</option>
-            <option value="Sony">Sony</option>
-            <option value="Apple">Apple</option>
-            <option value="LG">LG</option>
-            <option value="Samsung">Samsung</option>
+            <option value="microsoft">Microsoft</option>
+            <option value="google">Google</option>
+            <option value="sony">Sony</option>
+            <option value="apple">Apple</option>
+            <option value="lg">LG</option>
+            <option value="samsung">Samsung</option>
           </select>
         </div>
 
