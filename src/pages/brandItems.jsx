@@ -6,11 +6,13 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { Link, useParams } from 'react-router-dom';
+
 import { useEffect, useState } from 'react';
 
 const BrandItems = () => {
   const { name } = useParams();
   const [items, setItems] = useState([]);
+  const [isEmpty, setIsEmpty] = useState('');
 
   useEffect(() => {
     fetch(`http://localhost:3000/items/${name}`, {
@@ -21,7 +23,12 @@ const BrandItems = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        setItems(data);
+        if (data.length === 0) {
+          setIsEmpty('no data avaiable');
+        } else {
+          setItems(data);
+          setIsEmpty('');
+        }
       })
       .catch((error) => console.log(error));
   }, [name]);
@@ -71,7 +78,10 @@ const BrandItems = () => {
 
       <div className="flex justify-center items-center flex-col md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 md:px-[1rem] lg:px-[10rem] px-0">
         {/* item */}
-        {items &&
+
+        {isEmpty ? (
+          <p>{isEmpty}</p>
+        ) : (
           items.map((item) => {
             const { _id, url, brand, name, price, rating, type } = item;
 
@@ -111,7 +121,8 @@ const BrandItems = () => {
                 </div>
               </div>
             );
-          })}
+          })
+        )}
       </div>
     </div>
   );
