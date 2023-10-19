@@ -1,22 +1,43 @@
+import { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const UpdateItem = () => {
   const loader = useLoaderData();
-  const { _id } = loader;
+  const { _id, name } = loader;
 
-  fetch(`http://localhost:3000/items/id/${_id}`, {
-    method: 'GET',
-    headers: {
-      'content-type': 'application/json',
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.log(error));
+  useEffect(() => {
+    fetch(`http://localhost:3000/items/id/${_id}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  }, [_id]);
+
+  const handleUpdateSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const name = formData.get('name');
+    const userUpdate = { name };
+
+    fetch(`http://localhost:3000/items/id/${_id}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(userUpdate),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  };
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleUpdateSubmit}>
         <div className="border-4 bg-[#53ba00] flex justify-center items-center flex-col py-12">
           <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
             <label htmlFor="name">Name : </label>
@@ -24,6 +45,7 @@ const UpdateItem = () => {
               type="text"
               name="name"
               placeholder="Product name"
+              defaultValue={name}
               className="text-xl font-normal px-12 rounded-lg border-none outline-none"
             />
           </div>
