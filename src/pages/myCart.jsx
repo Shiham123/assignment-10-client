@@ -23,6 +23,21 @@ const MyCart = () => {
       .catch((error) => console.log(error));
   }, []);
 
+  const handleCartDelete = (id) => {
+    fetch(`http://localhost:3000/cart/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setCartData((prevData) => prevData.filter((item) => item._id !== id));
+      })
+      .catch((error) => console.log(error));
+  };
+
   return (
     <div className="flex flex-col justify-center items-center md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 gap-8 mx-8 my-12">
       {isCartEmpty ? (
@@ -50,7 +65,10 @@ const MyCart = () => {
                   </p>
                   <p className="font-poppins tracking-wide">Price : ${price}</p>
                   <div className="card-actions justify-end">
-                    <button className="bg-[#9bff2e] text-black font-poppins my-8 py-4 px-4 rounded-lg hover:bg-black hover:text-[#9bff2e] duration-500 tracking-widest capitalize font-bold">
+                    <button
+                      onClick={() => handleCartDelete(_id)}
+                      className="bg-[#9bff2e] text-black font-poppins my-8 py-4 px-4 rounded-lg hover:bg-black hover:text-[#9bff2e] duration-500 tracking-widest capitalize font-bold"
+                    >
                       Delete item
                     </button>
                   </div>
