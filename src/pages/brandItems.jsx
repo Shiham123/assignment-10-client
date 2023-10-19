@@ -107,7 +107,7 @@ const BrandItems = () => {
                     Rating : {rating}/10
                   </p>
                   <div className="card-actions justify-start">
-                    <Link to="/itemDetails">
+                    <Link to={`/itemDetails/${_id}`}>
                       <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize my-4">
                         show Details
                       </button>

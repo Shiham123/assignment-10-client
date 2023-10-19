@@ -38,7 +38,7 @@ const routes = createBrowserRouter([
       { path: '/brand/:name', element: <BrandItems /> },
       { path: '/register', element: <RegisterPage /> },
       {
-        path: '/itemDetails',
+        path: '/itemDetails/:id',
         element: (
           <PrivateRoute>
             <ItemDetails />
