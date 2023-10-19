@@ -24,7 +24,7 @@ const BrandItems = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.length === 0) {
-          setIsEmpty('no data avaiable');
+          setIsEmpty('no data found');
         } else {
           setItems(data);
           setIsEmpty('');
@@ -112,7 +112,7 @@ const BrandItems = () => {
                         show Details
                       </button>
                     </Link>
-                    <Link to="/updateItem">
+                    <Link to={`/updateItem/${_id}`}>
                       <button className="bg-[#9bff2e] px-4 py-2 rounded-full hover:scale-110 duration-500 font-poppins font-semibold tracking-widest capitalize">
                         Update Product
                       </button>

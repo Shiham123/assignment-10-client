@@ -16,6 +16,7 @@ const MyCart = () => {
         if (data.length === 0) {
           setIsCartEmpty('not item is added');
         } else {
+          console.log(data);
           setCartData(data);
           setIsCartEmpty('');
         }

@@ -46,12 +46,16 @@ const routes = createBrowserRouter([
         ),
       },
       {
-        path: '/updateItem',
+        path: '/updateItem/:id',
         element: (
           <PrivateRoute>
             <UpdateItem />
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/items/id/${params.id}`).then(
+            (response) => response.json()
+          ),
       },
     ],
   },
