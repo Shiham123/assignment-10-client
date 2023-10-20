@@ -53,9 +53,9 @@ const routes = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/items/id/${params.id}`).then(
-            (response) => response.json()
-          ),
+          fetch(
+            `https://server-side-assignment-10-p9u3k4b9y-shiham123.vercel.app/items/id/${params.id}`
+          ).then((response) => response.json()),
       },
     ],
   },

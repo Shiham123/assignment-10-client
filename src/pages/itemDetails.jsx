@@ -7,12 +7,15 @@ const ItemDetails = () => {
   const [isDetails, setIsDetails] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/itemDetails/${id}`, {
-      method: 'GET',
-      headers: {
-        'content-type': 'application/json',
-      },
-    })
+    fetch(
+      `https://server-side-assignment-10-p9u3k4b9y-shiham123.vercel.app/itemDetails/${id}`,
+      {
+        method: 'GET',
+        headers: {
+          'content-type': 'application/json',
+        },
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -31,13 +34,16 @@ const ItemDetails = () => {
       brand,
     };
 
-    fetch('http://localhost:3000/cart', {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify(cartItems),
-    })
+    fetch(
+      'https://server-side-assignment-10-p9u3k4b9y-shiham123.vercel.app/cart',
+      {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(cartItems),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
