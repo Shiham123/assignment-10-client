@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import {
   MobileNav,
   Typography,
@@ -12,9 +12,6 @@ import Swal from 'sweetalert2';
 
 const NavbarItem = () => {
   const [openNav, setOpenNav] = React.useState(false);
-  const [userName, setUserName] = useState(null);
-  const [userPhoto, setUserPhoto] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   React.useEffect(() => {
     window.addEventListener(
@@ -26,29 +23,9 @@ const NavbarItem = () => {
   const context = useContext(AppContext);
   const { user, logout } = context;
 
-  useEffect(() => {
-    if (user) {
-      const showNamePicture = async () => {
-        try {
-          setLoading(true);
-          const nameUser = await user.displayName;
-          const photo = await user.photoURL;
-
-          if (nameUser && photo) {
-            setUserName(nameUser);
-            setUserPhoto(photo);
-          }
-          setLoading(false);
-        } catch (error) {
-          console.log(error);
-          setLoading(false);
-        }
-      };
-      showNamePicture();
-    } else {
-      setLoading(false);
-    }
-  }, [user]);
+  const photoUrl = user?.photoURL;
+  const displayName = user?.displayName;
+  console.log(photoUrl, displayName);
 
   const handleLogout = () => {
     logout()
@@ -151,24 +128,18 @@ const NavbarItem = () => {
         {user ? (
           <div className="hidden md:hidden lg:flex lg:justify-center lg:items-center gap-8">
             <div>
-              {loading ? (
-                <p>loading...</p>
-              ) : (
-                user &&
-                userName &&
-                userPhoto && (
-                  <div className="flex justify-center items-center">
-                    <h1 className="font-poppins font-bold tracking-wider">
-                      {userName}
-                    </h1>
-                    <img
-                      src={userPhoto}
-                      alt=""
-                      width="30px"
-                      className="rounded-full border-white"
-                    />
-                  </div>
-                )
+              {user && (
+                <div className="flex justify-center items-center">
+                  <h1 className="font-poppins font-bold tracking-wider">
+                    {displayName}
+                  </h1>
+                  <img
+                    src={photoUrl}
+                    alt=""
+                    width="30px"
+                    className="rounded-full border-white"
+                  />
+                </div>
               )}
             </div>
             <Button
@@ -249,10 +220,10 @@ const NavbarItem = () => {
           {user && (
             <div className="flex justify-center items-center">
               <h1 className="font-poppins font-bold tracking-wider">
-                {userName}
+                {displayName}
               </h1>
               <img
-                src={userPhoto}
+                src={photoUrl}
                 alt=""
                 width="30px"
                 className="rounded-full border-white"

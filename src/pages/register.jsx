@@ -45,7 +45,9 @@ const RegisterPage = () => {
     createUserEmailPassword(email, password)
       .then((result) => {
         console.log(result);
-        showProfile(userName, photoUrl).catch((error) => console.log(error));
+        showProfile(userName, photoUrl)
+          .then((result) => console.log(result))
+          .catch((error) => console.log(error));
 
         navigate('/login');
         logout()
