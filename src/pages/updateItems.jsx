@@ -3,7 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const UpdateItem = () => {
   const loader = useLoaderData();
-  const { _id, name } = loader;
+  const { _id, name, url, type, brand, price, rating } = loader;
 
   useEffect(() => {
     fetch(`http://localhost:3000/items/id/${_id}`, {
@@ -21,7 +21,12 @@ const UpdateItem = () => {
     event.preventDefault();
     const formData = new FormData(event.target);
     const name = formData.get('name');
-    const userUpdate = { name };
+    const url = formData.get('url');
+    const type = formData.get('type');
+    const price = formData.get('price');
+    const rating = formData.get('rating');
+    const brand = formData.get('brand');
+    const userUpdate = { name, url, price, type, rating, brand };
 
     fetch(`http://localhost:3000/items/id/${_id}`, {
       method: 'PUT',
@@ -56,6 +61,7 @@ const UpdateItem = () => {
               type="url"
               name="url"
               placeholder="Photo url here"
+              defaultValue={url}
               className="text-xl font-normal px-12 rounded-lg border-none outline-none"
             />
           </div>
@@ -65,6 +71,7 @@ const UpdateItem = () => {
             <select
               id="dropdown"
               name="brand"
+              defaultValue={brand}
               className="text-xl font-normal px-12 rounded-lg border-none outline-none"
             >
               <option value="microsoft">Microsoft</option>
@@ -82,6 +89,7 @@ const UpdateItem = () => {
               type="text"
               name="type"
               placeholder="Product type here"
+              defaultValue={type}
               className="text-xl font-normal px-12 rounded-lg border-none outline-none"
             />
           </div>
@@ -92,19 +100,9 @@ const UpdateItem = () => {
               type="number"
               name="price"
               placeholder="Type your price here"
+              defaultValue={price}
               className="text-xl font-normal px-12 rounded-lg border-none outline-none"
             />
-          </div>
-
-          <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
-            <label htmlFor="details">Details : </label>
-            <textarea
-              name="details"
-              cols="30"
-              rows="2"
-              placeholder="Type your details here"
-              className="text-xl font-normal px-12 rounded-lg border-none outline-none"
-            ></textarea>
           </div>
 
           <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
@@ -113,6 +111,7 @@ const UpdateItem = () => {
               type="text"
               name="rating"
               placeholder="Place your rating here"
+              defaultValue={rating}
               className="text-xl font-normal px-12 rounded-lg border-none outline-none"
             />
           </div>
