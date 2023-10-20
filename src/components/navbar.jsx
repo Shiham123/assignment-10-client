@@ -143,20 +143,20 @@ const NavbarItem = () => {
             </div>
             <Button
               size="sm"
-              className="hidden lg:inline-block bg-[#9bff2e] text-black font-poppins"
+              className="hidden lg:inline-block bg-[#9bff2e] hover:bg-black hover:text-[#9bff2e] duration-500 text-black font-poppins"
             >
               <span onClick={handleLogout}>Log Out</span>
             </Button>
           </div>
         ) : (
-          <Button
-            size="sm"
-            className="hidden lg:inline-block bg-[#9bff2e] text-black font-poppins"
-          >
-            <Link to="/login">
+          <Link to="/login">
+            <Button
+              size="sm"
+              className="hidden lg:inline-block bg-[#9bff2e] hover:bg-black hover:text-[#9bff2e] duration-500 text-black font-poppins"
+            >
               <span>Log In</span>
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         )}
         <IconButton
           variant="text"
@@ -202,19 +202,19 @@ const NavbarItem = () => {
           {user ? (
             <Button
               size="sm"
-              className="mb-2  bg-[#9bff2e] text-black font-poppins"
+              className="mb-2 bg-[#9bff2e] text-black hover:bg-black hover:text-[#9bff2e] duration-500 font-poppins"
             >
               <span onClick={handleLogout}>Log Out</span>
             </Button>
           ) : (
-            <Button
-              size="sm"
-              className="mb-2  bg-[#9bff2e] text-black font-poppins"
-            >
-              <Link to="/login">
+            <Link to="/login">
+              <Button
+                size="sm"
+                className="mb-2 bg-[#9bff2e] text-black hover:bg-black hover:text-[#9bff2e] duration-500 font-poppins"
+              >
                 <span>Log In</span>
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           )}
         </div>
       </MobileNav>

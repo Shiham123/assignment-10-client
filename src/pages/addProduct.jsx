@@ -123,7 +123,7 @@ const AddProduct = () => {
         <div>
           <button
             type="submit"
-            className="bg-[#9bff2e] px-12 py-4 rounded-lg font-poppins tracking-widest font-bold text-2xl my-8"
+            className="bg-[#9bff2e] hover:bg-black hover:text-[#9bff2e] duration-500 px-12 py-4 rounded-lg font-poppins tracking-widest font-bold text-2xl my-8"
           >
             Add Product
           </button>
