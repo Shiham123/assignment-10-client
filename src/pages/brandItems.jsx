@@ -80,7 +80,15 @@ const BrandItems = () => {
         {/* item */}
 
         {isEmpty ? (
-          <p>{isEmpty}</p>
+          <div className="flex justify-center items-center flex-col m-10">
+            <img
+              src="https://raw.githubusercontent.com/Shiham123/img-for-creative/master/LOGO/5928294_3009287.jpg"
+              alt=""
+            />
+            <p className="font-poppins text-5xl hover:text-[#9bff2e] hover:bg-black duration-500 p-8 uppercase tracking-widest">
+              no item available
+            </p>
+          </div>
         ) : (
           items.map((item) => {
             const { _id, url, brand, name, price, rating, type } = item;
