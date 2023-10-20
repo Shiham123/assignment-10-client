@@ -49,7 +49,7 @@ const AddProduct = () => {
   return (
     <form onSubmit={handleSubmit} ref={formRef}>
       <div className="border-4 bg-[#53ba00] flex justify-center items-center flex-col py-12">
-        <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+        <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="name">Name : </label>
           <input
             type="text"
@@ -59,7 +59,7 @@ const AddProduct = () => {
           />
         </div>
 
-        <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+        <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="image">Image : </label>
           <input
             type="url"
@@ -69,7 +69,7 @@ const AddProduct = () => {
           />
         </div>
 
-        <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+        <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="dropdown">Brand Name :</label>
           <select
             id="dropdown"
@@ -85,7 +85,7 @@ const AddProduct = () => {
           </select>
         </div>
 
-        <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+        <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="type">Type :</label>
           <input
             type="text"
@@ -95,7 +95,7 @@ const AddProduct = () => {
           />
         </div>
 
-        <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+        <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="price">Price : </label>
           <input
             type="number"
@@ -105,7 +105,7 @@ const AddProduct = () => {
           />
         </div>
 
-        <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+        <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="details">Details : </label>
           <textarea
             name="details"
@@ -116,7 +116,7 @@ const AddProduct = () => {
           ></textarea>
         </div>
 
-        <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+        <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="price">Rating : </label>
           <input
             type="number"
