@@ -10,11 +10,7 @@ const RegisterPage = () => {
   const context = useContext(AppContext);
   const navigate = useNavigate();
 
-  const { createUserEmailPassword, showProfile } = context;
-
-  const reloadSwal = () => {
-    window.location.reload();
-  };
+  const { createUserEmailPassword, showProfile, logout } = context;
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -49,16 +45,19 @@ const RegisterPage = () => {
     createUserEmailPassword(email, password)
       .then((result) => {
         console.log(result);
+        showProfile(userName, photoUrl).catch((error) => console.log(error));
 
-        Swal.fire({
-          icon: 'success',
-          text: 'User created successfully',
-        }).then(() => {
-          reloadSwal();
-        });
-
-        navigate('/');
-        return showProfile(userName, photoUrl);
+        navigate('/login');
+        logout()
+          .then((result) => {
+            console.log(result);
+            Swal.fire({
+              icon: 'success',
+              text: 'User created successfully',
+              footer: 'please login',
+            });
+          })
+          .catch((error) => console.log(error));
       })
       .catch((error) => console.log(error));
   };
