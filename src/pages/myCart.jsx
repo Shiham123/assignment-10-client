@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 const MyCart = () => {
   const [cartData, setCartData] = useState([]);
@@ -34,6 +35,10 @@ const MyCart = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        Swal.fire({
+          icon: 'error',
+          text: 'item deleted successfully',
+        });
         setCartData((prevData) => prevData.filter((item) => item._id !== id));
       })
       .catch((error) => console.log(error));

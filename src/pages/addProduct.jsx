@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 const AddProduct = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -28,7 +30,13 @@ const AddProduct = () => {
       body: JSON.stringify(userAddData),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        Swal.fire({
+          icon: 'success',
+          text: 'Item added to database successfully',
+        });
+        console.log(data);
+      })
       .catch((error) => console.log(error));
   };
 

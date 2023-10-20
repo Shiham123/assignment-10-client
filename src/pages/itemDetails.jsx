@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ItemDetails = () => {
   const { id } = useParams();
@@ -38,7 +39,13 @@ const ItemDetails = () => {
       body: JSON.stringify(cartItems),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data);
+        Swal.fire({
+          icon: 'success',
+          text: 'Item added to cart successfully',
+        });
+      })
       .catch((error) => console.log(error));
   };
 

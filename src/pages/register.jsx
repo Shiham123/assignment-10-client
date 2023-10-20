@@ -1,9 +1,12 @@
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/context';
+import Swal from 'sweetalert2';
 
 const RegisterPage = () => {
   const context = useContext(AppContext);
+  const navigate = useNavigate();
+
   const { createUserEmailPassword, showProfile } = context;
 
   const handleSubmit = (event) => {
@@ -17,6 +20,11 @@ const RegisterPage = () => {
     createUserEmailPassword(email, password)
       .then((result) => {
         console.log(result);
+        Swal.fire({
+          icon: 'success',
+          text: 'User created successfully',
+        });
+        navigate('/');
         showProfile(userName, photoUrl)
           .then((result) => console.log(result))
           .catch((error) => console.log(error));

@@ -8,6 +8,8 @@ import {
 import { Link, NavLink } from 'react-router-dom';
 import { AppContext } from '../context/context';
 
+import Swal from 'sweetalert2';
+
 const NavbarItem = () => {
   const [openNav, setOpenNav] = React.useState(false);
 
@@ -26,7 +28,13 @@ const NavbarItem = () => {
 
   const handleLogout = () => {
     logout()
-      .then((result) => console.log(result))
+      .then((result) => {
+        console.log(result);
+        Swal.fire({
+          icon: 'success',
+          text: 'Logout successfully',
+        });
+      })
       .catch((error) => console.log(error));
   };
 

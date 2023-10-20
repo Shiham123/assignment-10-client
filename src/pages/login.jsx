@@ -4,6 +4,8 @@ import { AppContext } from '../context/context';
 
 import { FcGoogle } from 'react-icons/fc';
 
+import Swal from 'sweetalert2';
+
 const LoginPage = () => {
   const context = useContext(AppContext);
   const location = useLocation();
@@ -21,6 +23,10 @@ const LoginPage = () => {
       .then((result) => {
         console.log(result);
         navigate(location?.state ? location.state : '/');
+        Swal.fire({
+          icon: 'success',
+          text: 'Login successfully',
+        });
       })
       .catch((error) => console.log(error));
   };
@@ -30,6 +36,10 @@ const LoginPage = () => {
       .then((result) => {
         console.log(result);
         navigate(location?.state ? location.state : '/');
+        Swal.fire({
+          icon: 'success',
+          text: 'google login successfully',
+        });
       })
       .catch((error) => console.log(error));
   };

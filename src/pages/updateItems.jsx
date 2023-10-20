@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateItem = () => {
   const loader = useLoaderData();
@@ -36,7 +37,13 @@ const UpdateItem = () => {
       body: JSON.stringify(userUpdate),
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        Swal.fire({
+          icon: 'success',
+          text: 'Item updated successfully',
+        });
+        console.log(data);
+      })
       .catch((error) => console.log(error));
   };
 
@@ -119,9 +126,9 @@ const UpdateItem = () => {
           <div>
             <button
               type="submit"
-              className="bg-[#9bff2e] px-12 py-4 rounded-lg font-poppins tracking-widest font-bold text-2xl my-8"
+              className="bg-[#9bff2e] hover:bg-black hover:text-[#9bff2e] duration-500 px-12 py-4 rounded-lg font-poppins tracking-widest font-bold text-2xl my-8"
             >
-              Add Product
+              Update Product
             </button>
           </div>
         </div>
