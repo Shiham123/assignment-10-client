@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -17,6 +17,8 @@ const UpdateItem = () => {
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
   }, [_id]);
+
+  const formReset = useRef(null);
 
   const handleUpdateSubmit = (event) => {
     event.preventDefault();
@@ -43,13 +45,14 @@ const UpdateItem = () => {
           text: 'Item updated successfully',
         });
         console.log(data);
+        formReset.current.reset();
       })
       .catch((error) => console.log(error));
   };
 
   return (
     <div>
-      <form onSubmit={handleUpdateSubmit}>
+      <form onSubmit={handleUpdateSubmit} ref={formReset}>
         <div className="border-4 bg-[#53ba00] flex justify-center items-center flex-col py-12">
           <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
             <label htmlFor="name">Name : </label>

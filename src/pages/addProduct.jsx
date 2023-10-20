@@ -116,9 +116,11 @@ const AddProduct = () => {
         <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="price">Rating : </label>
           <input
-            type="text"
+            type="number"
             name="rating"
-            placeholder="Place your rating here"
+            min="0"
+            max="10"
+            placeholder="Place your rating"
             className="text-xl font-normal px-12 rounded-lg border-none outline-none"
           />
         </div>

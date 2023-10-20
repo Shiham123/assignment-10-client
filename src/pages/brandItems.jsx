@@ -96,7 +96,11 @@ const BrandItems = () => {
             return (
               <div key={_id} className="card w-80 bg-[#53ba00] shadow-xl my-8">
                 <figure>
-                  <img className="w-full object-cover" src={url} alt="Shoes" />
+                  <img
+                    className="w-full h-[15rem] object-cover"
+                    src={url}
+                    alt="Shoes"
+                  />
                 </figure>
                 <div className="card-body">
                   <h2 className="card-title">
