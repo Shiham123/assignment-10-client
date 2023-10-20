@@ -28,7 +28,13 @@ const LoginPage = () => {
           text: 'Login successfully',
         });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        Swal.fire({
+          icon: 'error',
+          text: 'Login failed',
+        });
+        console.log(error);
+      });
   };
 
   const handleGoogle = () => {

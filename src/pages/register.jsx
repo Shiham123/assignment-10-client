@@ -3,6 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AppContext } from '../context/context';
 import Swal from 'sweetalert2';
 
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const RegisterPage = () => {
   const context = useContext(AppContext);
   const navigate = useNavigate();
@@ -17,22 +20,46 @@ const RegisterPage = () => {
     const photoUrl = formData.get('url');
     const password = formData.get('password');
 
+    let passwordTest = null;
+
+    if (password.length < 7) {
+      toast('password must be 7 characters');
+      passwordTest = true;
+    }
+
+    if (!/[A-Z]/.test(password)) {
+      toast('password must contain at least one capital');
+      passwordTest = true;
+    }
+
+    if (!/[!@#$%^&*()_+[\]{};':"\\|,.<>/?]+/.test(password)) {
+      toast('password must contain special character');
+      passwordTest = true;
+    }
+
+    if (passwordTest) {
+      console.log(passwordTest);
+      return;
+    }
+
     createUserEmailPassword(email, password)
       .then((result) => {
         console.log(result);
+        showProfile(userName, photoUrl)
+          .then((result) => console.log(result))
+          .catch((error) => console.log(error));
+
         Swal.fire({
           icon: 'success',
           text: 'User created successfully',
         });
         navigate('/');
-        showProfile(userName, photoUrl)
-          .then((result) => console.log(result))
-          .catch((error) => console.log(error));
       })
       .catch((error) => console.log(error));
   };
   return (
     <div>
+      <ToastContainer />
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col">
           <h1 className="font-poppins text-5xl font-bold tracking-widest leading-10 my-10 hover:scale-110 duration-300 hover:opacity-80 uppercase">
