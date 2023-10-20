@@ -60,7 +60,7 @@ const UpdateItem = () => {
     <div>
       <form onSubmit={handleUpdateSubmit} ref={formReset}>
         <div className="border-4 bg-[#53ba00] flex justify-center items-center flex-col py-12">
-          <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+          <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
             <label htmlFor="name">Name : </label>
             <input
               type="text"
@@ -71,7 +71,7 @@ const UpdateItem = () => {
             />
           </div>
 
-          <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+          <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
             <label htmlFor="image">Image : </label>
             <input
               type="url"
@@ -82,7 +82,7 @@ const UpdateItem = () => {
             />
           </div>
 
-          <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+          <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
             <label htmlFor="dropdown">Brand Name :</label>
             <select
               id="dropdown"
@@ -99,7 +99,7 @@ const UpdateItem = () => {
             </select>
           </div>
 
-          <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+          <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
             <label htmlFor="type">Type :</label>
             <input
               type="text"
@@ -110,7 +110,7 @@ const UpdateItem = () => {
             />
           </div>
 
-          <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+          <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
             <label htmlFor="price">Price : </label>
             <input
               type="number"
@@ -121,7 +121,7 @@ const UpdateItem = () => {
             />
           </div>
 
-          <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
+          <div className="flex flex-col lg:flex-row md:flex-row font-poppins font-semibold text-2xl gap-12 my-4">
             <label htmlFor="price">Rating : </label>
             <input
               type="text"
