@@ -1,6 +1,8 @@
+import { useRef } from 'react';
 import Swal from 'sweetalert2';
 
 const AddProduct = () => {
+  const formRef = useRef(null);
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -36,12 +38,13 @@ const AddProduct = () => {
           text: 'Item added to database successfully',
         });
         console.log(data);
+        formRef.current.reset();
       })
       .catch((error) => console.log(error));
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} ref={formRef}>
       <div className="border-4 bg-[#53ba00] flex justify-center items-center flex-col py-12">
         <div className="flex font-poppins font-semibold text-2xl gap-12 my-4">
           <label htmlFor="name">Name : </label>
