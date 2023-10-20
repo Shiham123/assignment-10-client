@@ -15,15 +15,12 @@ const BrandItems = () => {
   const [isEmpty, setIsEmpty] = useState('');
 
   useEffect(() => {
-    fetch(
-      `https://server-side-assignment-10-p9u3k4b9y-shiham123.vercel.app/items/${name}`,
-      {
-        method: 'GET',
-        headers: {
-          'content-type': 'application.json',
-        },
-      }
-    )
+    fetch(`https://server-side-assignment-10.vercel.app/items/${name}`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application.json',
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         if (data.length === 0) {

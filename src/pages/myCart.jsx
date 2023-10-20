@@ -6,15 +6,12 @@ const MyCart = () => {
   const [isCartEmpty, setIsCartEmpty] = useState('');
 
   useEffect(() => {
-    fetch(
-      'https://server-side-assignment-10-p9u3k4b9y-shiham123.vercel.app/cart',
-      {
-        method: 'GET',
-        headers: {
-          'content-type': 'application/json',
-        },
-      }
-    )
+    fetch('https://server-side-assignment-10.vercel.app/cart', {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         if (data.length === 0) {
@@ -29,15 +26,12 @@ const MyCart = () => {
   }, []);
 
   const handleCartDelete = (id) => {
-    fetch(
-      `https://server-side-assignment-10-p9u3k4b9y-shiham123.vercel.app/cart/${id}`,
-      {
-        method: 'DELETE',
-        headers: {
-          'content-type': 'application/json',
-        },
-      }
-    )
+    fetch(`https://server-side-assignment-10.vercel.app/cart/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'content-type': 'application/json',
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

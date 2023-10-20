@@ -54,7 +54,7 @@ const routes = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://server-side-assignment-10-p9u3k4b9y-shiham123.vercel.app/items/id/${params.id}`
+            `https://server-side-assignment-10.vercel.app/items/id/${params.id}`
           ).then((response) => response.json()),
       },
     ],

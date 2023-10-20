@@ -25,7 +25,6 @@ const NavbarItem = () => {
 
   const photoUrl = user?.photoURL;
   const displayName = user?.displayName;
-  console.log(photoUrl, displayName);
 
   const handleLogout = () => {
     logout()

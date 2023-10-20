@@ -23,17 +23,14 @@ const AddProduct = () => {
       rating,
     };
 
-    fetch(
-      'https://server-side-assignment-10-p9u3k4b9y-shiham123.vercel.app/items',
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-        },
+    fetch('https://server-side-assignment-10.vercel.app/items', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
 
-        body: JSON.stringify(userAddData),
-      }
-    )
+      body: JSON.stringify(userAddData),
+    })
       .then((response) => response.json())
       .then((data) => {
         Swal.fire({
