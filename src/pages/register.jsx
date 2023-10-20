@@ -12,6 +12,10 @@ const RegisterPage = () => {
 
   const { createUserEmailPassword, showProfile } = context;
 
+  const reloadSwal = () => {
+    window.location.reload();
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
@@ -45,15 +49,16 @@ const RegisterPage = () => {
     createUserEmailPassword(email, password)
       .then((result) => {
         console.log(result);
-        showProfile(userName, photoUrl)
-          .then((result) => console.log(result))
-          .catch((error) => console.log(error));
 
         Swal.fire({
           icon: 'success',
           text: 'User created successfully',
+        }).then(() => {
+          reloadSwal();
         });
+
         navigate('/');
+        return showProfile(userName, photoUrl);
       })
       .catch((error) => console.log(error));
   };

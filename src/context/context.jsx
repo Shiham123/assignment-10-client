@@ -34,12 +34,12 @@ const AppProvider = ({ children }) => {
     return signInWithPopup(globalAuth, googleProvider);
   };
 
-  const showProfile = (displayName, photoUrl) => {
+  const showProfile = (displayName, photoURL) => {
     setLoading(true);
 
     return updateProfile(globalAuth.currentUser, {
-      displayName,
-      photoUrl,
+      displayName: displayName,
+      photoURL: photoURL,
     });
   };
 
