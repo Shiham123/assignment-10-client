@@ -1,8 +1,11 @@
-# React + Vite
+live link - https://tech-project-4435d.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. feature one - my service has backend technology so user can add product to the mongodb database for better performance
 
-Currently, two official plugins are available:
+2. feature two - In this side i am using firebase login and create user profile and also google login is applied
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+3. feature three - This site has multiple database in one server. when user click the add to cart then i am create a database for users. And i get the data from second server and show the my cart section. and user can see how many data user added.
+
+4. feature four - This site has a private routing system so user can't go anywhere in this site without login.
+
+5. feature five - this site has a page add product. so user can add product in the server side database.
