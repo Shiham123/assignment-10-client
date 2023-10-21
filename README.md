@@ -9,3 +9,9 @@ live link - https://tech-project-4435d.web.app/
 4. feature four - This site has a private routing system so user can't go anywhere in this site without login.
 
 5. feature five - this site has a page add product. so user can add product in the server side database.
+
+\*\*\*\* additional information
+
+firebase gave me two live link.
+
+### second live link : https://tech-project-4435d.firebaseapp.com/
