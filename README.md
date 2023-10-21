@@ -12,6 +12,10 @@ live link - https://tech-project-4435d.web.app/
 
 \*\*\*\* additional information
 
-firebase gave me two live link.
+###### firebase gave me two live link.
 
 ### second live link : https://tech-project-4435d.firebaseapp.com/
+
+### server link one : server-side-assignment-10-6z5rgfp5x-shiham123.vercel.app
+
+### server link two : server-side-assignment-10.vercel.app
