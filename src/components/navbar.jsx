@@ -142,10 +142,11 @@ const NavbarItem = () => {
               )}
             </div>
             <Button
+              onClick={handleLogout}
               size="sm"
               className="hidden lg:inline-block bg-[#9bff2e] hover:bg-black hover:text-[#9bff2e] duration-500 text-black font-poppins"
             >
-              <span onClick={handleLogout}>Log Out</span>
+              <span>Log Out</span>
             </Button>
           </div>
         ) : (
